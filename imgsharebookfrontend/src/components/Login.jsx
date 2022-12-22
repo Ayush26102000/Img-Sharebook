@@ -9,7 +9,16 @@ import ShareVideo from '../assets/assets/share.mp4';
 const Login = () => {
 
   const responseGoogle =(Response) => {
+        localStorage.setItem('user',JSON.stringify(response.profileObj))
 
+        const { name, googeId, imageUrl } = response.profileObj;
+
+        const doc = { 
+          _id: googeId,
+          _type: 'user',
+          userName: name,
+          image: imageUrl,
+        }
   }
 
   return (
